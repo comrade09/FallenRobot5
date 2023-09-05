@@ -704,7 +704,7 @@ def main():
                 chat_id=f"@{SUPPORT_CHAT}",
                 photo=START_IMG,
                 caption=f"""
-ㅤ{BOT_NAME} Is Alive,
+ㅤ{BOT_NAME} Is Alive""",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:
