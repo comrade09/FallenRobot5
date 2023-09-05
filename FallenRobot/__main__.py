@@ -95,10 +95,9 @@ buttons = [
    
 ]
 
-HELP_STRINGS = f"""
-*» Hey there... I'm Power 🧚‍♂️
-I have lots of features like AI Chatbot, Anime, Music, Notes, Filters, Fun and many others useful commands!
-Click on the buttons below to get documentation about specific modules.."""
+HELP_STRINGS = """
+`Hey there! My name is` [Power]("https://te.legra.ph/file/30d5d9d6c509390c5e461.jpg") 
+ `Have a look at the following for an idea of some of the things I can help you with.`"""
 
 IMPORTED = {}
 MIGRATEABLE = []
