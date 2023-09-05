@@ -71,8 +71,8 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """
-Hey   I am  (https://telegra.ph/file/18c7e38a3defb87a75278.jpg)✨
+PM_START_TEXT = f"""
+Hey   I am [{BOT_NAME}](https://telegra.ph/file/18c7e38a3defb87a75278.jpg) ✨
 I am an Anime themed group management with some fun features.
 Make sure you read About Me section below ;)
 
@@ -97,7 +97,7 @@ buttons = [
 ]
 
 HELP_STRINGS = f"""
-*» Hey there... I'm   {BOT_NAME} 🧚‍♂️
+*» Hey there... I'm Power 🧚‍♂️
 I have lots of features like AI Chatbot, Anime, Music, Notes, Filters, Fun and many others useful commands!
 Click on the buttons below to get documentation about specific modules.."""
 
