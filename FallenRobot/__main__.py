@@ -72,7 +72,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hey  {} I am {} (https://telegra.ph/file/18c7e38a3defb87a75278.jpg)✨
+Hey   I am  (https://telegra.ph/file/18c7e38a3defb87a75278.jpg)✨
 I am an Anime themed group management with some fun features.
 Make sure you read About Me section below ;)
 
@@ -194,9 +194,8 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rᴜʟᴇs"].send_rules(update, args[0], from_pm=True)
 
         else:
-            first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
+                text = PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
