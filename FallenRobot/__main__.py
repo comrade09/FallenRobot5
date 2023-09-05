@@ -72,10 +72,10 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hey There!` [👩‍💼](https://te.legra.ph/file/30d5d9d6c509390c5e461.jpg) `My name is` *Power*
-`I am an Anime Themed group management bot.
+Hey There! [👩‍💼](https://te.legra.ph/file/30d5d9d6c509390c5e461.jpg) My name is *Power*
+I am an Anime Themed group management bot.
 , I specialize in managing anime and similar themed groups.
-You can find my list of available commands with! Hit` *help*   
+You can find my list of available commands with! Hit *help*   
 """
 
 buttons = [
