@@ -71,12 +71,11 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = f"""
-Hey   I am Power ✨
-I am an Anime themed group management with some fun features.
-Make sure you read About Me section below ;)
-
-Want to see my powers? use /help or commands button below.*
+PM_START_TEXT = """
+`Hey There!` [👩‍💼](https://te.legra.ph/file/30d5d9d6c509390c5e461.jpg) `My name is` *Power*
+`I am an Anime Themed group management bot.
+, I specialize in managing anime and similar themed groups.
+You can find my list of available commands with! Hit` *help*   
 """
 
 buttons = [
@@ -194,12 +193,11 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rᴜʟᴇs"].send_rules(update, args[0], from_pm=True)
 
         else:
-            update.effective_message.reply_photo(
-            START_IMG,
-            caption=f"{PM_START_TEXT}"
-            ),
-            parse_mode=ParseMode.HTML,        
-            timeout=60,
+            update.effective_message.reply_text(
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
             )
     else:
         update.effective_message.reply_photo(
