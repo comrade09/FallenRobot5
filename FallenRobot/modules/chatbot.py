@@ -134,7 +134,7 @@ def chatbot(update: Update, context: CallbackContext):
         )
         results = json.loads(request.text)
         sleep(0.5)
-        message.reply_text(results["reply"])
+        message.reply_text(results["answer"])
 
 
 __help__ = f"""
