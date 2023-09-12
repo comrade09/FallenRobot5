@@ -1,5 +1,5 @@
 import requests
-from ShinobuRobot import pbot
+from FallenRobot import pbot
 from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram.enums import ParseMode
