@@ -130,7 +130,7 @@ def chatbot(update: Update, context: CallbackContext):
             return
         bot.send_chat_action(chat_id, action="typing")
         request = requests.get(
-            f"https://api.safone.me/asq?query={message.text}"
+            f"https://api.safone.me/chatbot?query={message.text}&user_id={user.id}"
         )
         results = json.loads(request.text)
         sleep(0.5)
