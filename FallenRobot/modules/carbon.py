@@ -18,7 +18,7 @@ def base64_to_image(base64_data):
         print(f"Error decoding base64 data: {e}")
         return None
 
-@bot.on_message(filters.command("carbon"), group=1)
+@pbot.on_message(filters.command("carbon"), group=1)
 async def carbon_func(_, message):
     if message.reply_to_message:
         if message.reply_to_message.text:
