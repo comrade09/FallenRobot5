@@ -46,7 +46,7 @@ async def chatbot(_: Client, message: Message):
         )
 
     m= await message.reply_text("Answering....", parse_mode=ParseMode.MARKDOWN)
-    response = requests.get("https://api.safone.me/asq?query=" + text)
+    response = requests.get("https://api.safone.dev/asq?query=" + text)
     if response.status_code == 200:
         data = response.json()
         ans = data['answer']
