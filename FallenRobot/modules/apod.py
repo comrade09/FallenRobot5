@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , Callback
 @pbot.on_message(filters.command("apod"), group=977)
 async def genshin_character(_: Client, message: Message):
     m= await message.reply_text("Fetching Info....", parse_mode=ParseMode.MARKDOWN)
-    response = requests.get(f"https://api.safone.me/astronomy")
+    response = requests.get(f"https://api.safone.dev/astronomy")
     if response.status_code == 200:
         data = response.json()
         a= data["date"]
@@ -35,7 +35,7 @@ async def genshin_character(_: Client, message: Message):
 async def features(_: Client, query: CallbackQuery):
     data = query.data
     if data == "apod":
-       response = requests.get(f"https://api.safone.me/astronomy")
+       response = requests.get(f"https://api.safone.dev/astronomy")
        if response.status_code == 200:
          data = response.json()
          exp= data["explanation"]
