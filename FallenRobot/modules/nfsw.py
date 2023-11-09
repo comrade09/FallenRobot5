@@ -22,7 +22,7 @@ def base64_to_image(base64_data):
 @pbot.on_message(filters.command("waifu"), group=986)
 async def carbon_func(_, message):
     
-    m = await message.reply_text("`Generating Carbon...`")
+    m = await message.reply_text("`pls waitoo...`")
 
     response = requests.get(f"https://api.safone.dev/anime/nsfw/neko" )
     if response.status_code == 200:  
