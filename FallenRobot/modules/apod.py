@@ -4,6 +4,7 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 from pyrogram.enums import ParseMode
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , CallbackQuery , Message
+import asyncio
 
 @pbot.on_message(filters.command("apod"), group=977)
 async def genshin_character(_: Client, message: Message):
