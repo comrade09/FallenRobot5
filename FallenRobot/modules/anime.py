@@ -43,7 +43,7 @@ async def genshin_character(_: Client, message: Message):
 **Gender:** {gender} 
 
             """
- await message.reply_photo (photo , caption= genshin_char, parse_mode=ParseMode.MARKDOWN )
+    await message.reply_photo (photo , caption= genshin_char, parse_mode=ParseMode.MARKDOWN )
 
 
 @bot.on_message(filters.command("manga"), group=977)
@@ -148,3 +148,5 @@ Command '/gicharacter'
 eg. /gicharacter Amber
 
  """
+
+
