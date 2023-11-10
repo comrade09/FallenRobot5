@@ -29,7 +29,7 @@ async def news(_, message: Message):
                 news_item = random.choice(news_data)
 
                 author = news_item["author"]
-                time = news_item ["time"]
+                
                 title = news_item["title"]
                 date = news_item["date"]
                 description = news_item["description"]
