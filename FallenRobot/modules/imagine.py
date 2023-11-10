@@ -36,7 +36,7 @@ async def carbon_func(_, message):
             txt = message.text.split(None, 1)[1]
         except IndexError:
             return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ.")
-    m = await message.reply_text("ɢᴇɴᴇʀᴀᴛɪɴɢ ᴄᴀʀʙᴏɴ...")
+    m = await message.reply_text("Generating Image ")
     response = requests.get(f"https://api.safone.dev/imagine?text={txt}&limit=1" )
     if response.status_code == 200:  
         data = response.json()
@@ -57,5 +57,14 @@ async def carbon_func(_, message):
 
         # Send image to the user who requested
         await message.reply_photo(image_buffer, caption="Here is your image!")
+        await m.delete()
     else:
         await message.reply_text("Failed to decode base64 image data.")
+__mod_name__ = "Image-Gen"
+
+__help__ = """
+
+Command '/imagine'
+eg. /imagine Boy in space
+
+ """
