@@ -46,7 +46,7 @@ async def genshin_character(_: Client, message: Message):
     await message.reply_photo (photo , caption= genshin_char, parse_mode=ParseMode.MARKDOWN )
 
 
-@bot.on_message(filters.command("manga"), group=977)
+@pbot.on_message(filters.command("manga"), group=977)
 async def genshin_character(_: Client, message: Message):
     text = "".join(message.text.split(" ")[1:])
     if len(text) == 0:
@@ -91,7 +91,7 @@ async def genshin_character(_: Client, message: Message):
 
     await message.reply_photo(photo=photo_manga, caption= gen_char, parse_mode=ParseMode.MARKDOWN )
 
-@bot.on_message(filters.command("anime"), group=977)
+@pbot.on_message(filters.command("anime"), group=977)
 async def genshin_character(_: Client, message: Message):
     text = "".join(message.text.split(" ")[1:])
     if len(text) == 0:
