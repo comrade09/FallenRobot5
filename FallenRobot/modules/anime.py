@@ -80,8 +80,8 @@ async def genshin_character(_: Client, message: Message):
 
 **Title:** {title}
 **Total Chapters:** {chp}
-**Start Date:** {eday}/{emonth}/{eyear}
-**End Date:** {sday}/{smonth}/{syear}
+**End Date:** {eday}/{emonth}/{eyear}
+**Start Date:** {sday}/{smonth}/{syear}
 **Status:** {status}
 **Avg Score:** {avg}      
 **Description :**{mxg}
@@ -127,14 +127,14 @@ async def genshin_character(_: Client, message: Message):
 
 **Title:** {title}
 **Total Episodes:** {ep}
-**Start Date:** {eday}/{emonth}/{eyear}
-**End Date:** {sday}/{smonth}/{syear}
+**End Date:** {eday}/{emonth}/{eyear}
+**Start Date:** {sday}/{smonth}/{syear}
 **Status:** {status}
-**Title:** {sea}
-**Title:** {studios}
+**Season:** {sea}
+**Studio:** `{studios}`
 **Avg Score:** {avg}      
 **Description :**{mxg}
-**Genres:** {genres} 
+**Genres:** `{genres}` 
 
 """
 
