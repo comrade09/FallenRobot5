@@ -8,6 +8,7 @@ import base64
 import requests
 from PIL import Image
 
+
 def base64_to_image(base64_data):
     try:
         base64_data += '=' * (4 - len(base64_data) % 4)
