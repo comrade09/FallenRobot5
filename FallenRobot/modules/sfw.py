@@ -31,7 +31,7 @@ async def carbon_func(_, message):
     
     if command == "awoo":
         final_url = base_url + "awoo"
-    elif command == "waifu":
+    elif command == "swaifu":
         final_url = base_url + "waifu"
     elif command == "pat":
         final_url = base_url + "pat"
