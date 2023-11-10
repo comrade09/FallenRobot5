@@ -15,9 +15,10 @@ async def gpt(_: app, message: Message):
             "Cannot reply to empty message.", parse_mode=ParseMode.MARKDOWN
         )
     m = await message.reply_text("Getting Request....", parse_mode=ParseMode.MARKDOWN)
-    url = "https://api.safone.me/chatgpt"
+    url = "https://api.safone.dev/chatgpt"
     payloads = {
           "message": text,
+          "version": 3,
           "chat_mode": "assistant",
           "dialog_messages": "[{\"bot\":\"\",\"user\":\"\"}]"
           }
