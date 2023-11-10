@@ -19,7 +19,7 @@ def base64_to_image(base64_data):
         print(f"Error decoding base64 data: {e}")
         return None
 
-@pbot.on_message(filters.command("waifu"), group=986)
+@pbot.on_message(filters.command("nsfwwaifu"), group=986)
 async def carbon_func(_, message):
     
     m = await message.reply_text("`waitoo...`")
@@ -48,7 +48,7 @@ async def carbon_func(_, message):
     else:
         await message.reply_text("Failed to decode base64 image data.")
 
-@pbot.on_message(filters.command("trap"), group=984)
+@pbot.on_message(filters.command("nsfwtrap"), group=984)
 async def carbon_func(_, message):
     
     m = await message.reply_text("`waitoo...`")
@@ -76,7 +76,7 @@ async def carbon_func(_, message):
         await m.delete()
     else:
         await message.reply_text("Failed to decode base64 image data.")
-@pbot.on_message(filters.command("neko"), group=936)
+@pbot.on_message(filters.command("nsfwneko"), group=936)
 async def carbon_func(_, message):
     
     m = await message.reply_text("`waitoo...`")
@@ -143,9 +143,9 @@ Get nfsw imagesusing this module
 **Usage:**
     
 - /bj *:* Random bj Pic
-- /trap
-- /neko *:* returns random neko img 
-- /waifu *:* grab nsfw waifu pic
+- /nsfwtrap
+- /nsfwneko *:* returns random neko img 
+- /nsfwwaifu *:* grab nsfw waifu pic
     
     """
 __mod_name__ = "Nsfw"
