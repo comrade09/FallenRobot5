@@ -65,7 +65,17 @@ def no_longer_afk(update: Update, context: CallbackContext):
                 "{} is back online!",
                 "{} is finally here!",
                 "Welcome back! {}",
-                "Where is {}?\nIn the chat!",
+                "Where is {}?\nIn the chat!"
+                "{} is no longer AFK!\nTime you were AFK for: .",
+                "{} came online ",
+    "Welcome back {}\n onichaaa",
+    "Welcome to hell again {},",
+    "Where is {}?\nIn the chat!",
+    "Pro Player {} is Here",
+    "{} why did you came back ",
+    "{} Is now back online!, he was offline",
+    "The Dead {} Came Back From His Grave!  he was dead af",
+    "OwO, Welcome back {}, ",
             ]
             chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
