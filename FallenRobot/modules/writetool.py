@@ -24,7 +24,7 @@ def base64_to_image(base64_data):
         print(f"Error decoding base64 data: {e}")
         return None
 
-@bot.on_message(filters.command("carbon"), group=1)
+@bot.on_message(filters.command("write"), group=648)
 async def carbon_func(_, message):
     if message.reply_to_message:
         if message.reply_to_message.text:
@@ -37,7 +37,7 @@ async def carbon_func(_, message):
         except IndexError:
             return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ.")
     m = await message.reply_text("generating")
-    response = requests.get(f"https://api.safone.dev/imagine?text={txt}&limit=1" )
+    response = requests.get(f"https://api.safone.dev/write?text={text}&page=rough" )
     if response.status_code == 200:  
         data = response.json()
         
@@ -69,5 +69,5 @@ __help__ = """
 """
 
 
-__mod_name__ = "WʀɪᴛᴇTᴏᴏʟ"
+__mod_name__ = "Write"
 
