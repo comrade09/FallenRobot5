@@ -78,3 +78,18 @@ async def aninews(_, message: Message):
 
     except requests.exceptions.RequestException as e:
         await message.reply_text(f"Error: {str(e)}")
+
+
+__help__ = """
+    
+Get your news  by using this module
+    
+**Usage:**
+    
+- /news  Get today breaking news
+- /animenews Get anime news
+  
+
+    
+    """
+__mod_name__ = "News"
