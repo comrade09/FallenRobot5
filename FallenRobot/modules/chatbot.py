@@ -122,9 +122,9 @@ def chatbot(update: Update, context: CallbackContext):
             return
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get('https://api.safone.dev/asq?query='+Message)
+        kukiurl = requests.get(f'https://api.safone.dev/chatbot?query={Message}&user_id={chat_id}')
         Kuki = json.loads(kukiurl.text)
-        kuki = Kuki['answer']
+        kuki = Kuki['response']
         sleep(0.3)
         message.reply_text(kuki, timeout=60)
 
