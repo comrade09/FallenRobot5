@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from pyrogram.enums import ParseMode 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , CallbackQuery 
-from ShinobuRobot import pbot
+from FallenRobot import pbot
 
 
 @pbot.on_message(filters.command("lyrics"), group=469)
