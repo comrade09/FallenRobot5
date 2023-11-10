@@ -12,7 +12,7 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from FallenRobot import  SUDO_USERS, BOT_USERNAME
+from FallenRobot import  DRAGONS, BOT_USERNAME
 from FallenRobot import pbot
 from FallenRobot.modules.sql import forceSubscribe_sql as sql
 
