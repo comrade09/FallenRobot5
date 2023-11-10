@@ -37,7 +37,7 @@ async def carbon_func(_, message):
         except IndexError:
             return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ.")
     m = await message.reply_text("generating")
-    response = requests.get(f"https://api.safone.dev/write?text={text}&page=rough" )
+    response = requests.get(f"https://api.safone.dev/write?text={txt}&page=rough" )
     if response.status_code == 200:  
         data = response.json()
         
