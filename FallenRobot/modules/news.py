@@ -37,7 +37,7 @@ async def news(_, message: Message):
                 nurl = news_item["link"]
                 image = news_item["imageUrl"]
 
-                message_text = f"<b>📰TITLE</b>: {title}\n\n<b>📄AUTHOR</b>: {author}\n\n<b>📅DATE & TIME</b>: {date} {time}\n\n<b>📃DESCRIPTION</b>: `{description}`\n\n📂READ MORE : {nurl} "
+                message_text = f"<b>📰TITLE</b>: {title}\n\n<b>📄AUTHOR</b>: {author}\n\n<b>📅DATE & TIME</b>: {date} \n\n<b>📃DESCRIPTION</b>: `{description}`\n\n📂READ MORE : {nurl} "
                 photo =f"{image}"
 
                 await message.reply_photo(photo,caption = message_text)
