@@ -1,37 +1,65 @@
 import requests
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
-from telegram.ext import CallbackContext
+from FallenRobot import pbot
+from pyrogram import filters, Client
+from pyrogram.types import Message
+from pyrogram.enums import ParseMode
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton , CallbackQuery , Message
+import asyncio
 
-from FallenRobot import BOT_NAME, BOT_USERNAME, dispatcher
-from FallenRobot.modules.disable import DisableAbleCommandHandler
+from io import BytesIO
+import base64
+import requests
+from PIL import Image
 
+def base64_to_image(base64_data):
+    try:
+        if isinstance(base64_data, list):
+            base64_data = base64_data[0]
 
-def handwrite(update: Update, context: CallbackContext):
-    message = update.effective_message
+        base64_data += '=' * (4 - len(base64_data) % 4)
+        image_data = base64.b64decode(base64_data)
+        image = Image.open(BytesIO(image_data))
+        return image
+    except Exception as e:
+        print(f"Error decoding base64 data: {e}")
+        return None
+
+@bot.on_message(filters.command("carbon"), group=1)
+async def carbon_func(_, message):
     if message.reply_to_message:
-        text = message.reply_to_message.text
+        if message.reply_to_message.text:
+            txt = message.reply_to_message.text
+        else:
+            return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ.")
     else:
-        text = update.effective_message.text.split(None, 1)[1]
-    m = message.reply_text("Writing the text...")
-    req = requests.get(f"https://api.sdbots.tk/write?text={text}").url
-    message.reply_photo(
-        photo=req,
-        caption=f"""
-Successfully Written Text 💘
+        try:
+            txt = message.text.split(None, 1)[1]
+        except IndexError:
+            return await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ.")
+    m = await message.reply_text("generating")
+    response = requests.get(f"https://api.safone.dev/imagine?text={txt}&limit=1" )
+    if response.status_code == 200:  
+        data = response.json()
+        
+        # Check if 'image' key exists in the response
+        imx = data['image']
 
-✨ **Written By :** [{BOT_NAME}](https://t.me/{BOT_USERNAME})
-🥀 **Requested by :** {update.effective_user.first_name}
-❄ **Link :** `{req}`""",
-        parse_mode=ParseMode.MARKDOWN,
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("• ᴛᴇʟᴇɢʀᴀᴩʜ •", url=req),
-                ],
-            ]
-        ),
-    )
-    m.delete()
+
+    # Replace 'YOUR_BASE64_IMAGE_DATA' with your actual base64-encoded image data
+    base64_image_data = imx
+
+    image = base64_to_image(base64_image_data)
+    if image:
+        # Convert image to BytesIO object
+        image_buffer = BytesIO()
+        image.save(image_buffer, format="PNG")
+        image_buffer.seek(0)
+
+        # Send image to the user who requested
+        await message.reply_photo(image_buffer, caption="Here is your image!")
+    else:
+        await message.reply_text("Failed to decode base64 image data.")
+
 
 
 __help__ = """
@@ -40,10 +68,6 @@ __help__ = """
 ❍ /write <text> *:*Writes the given text.
 """
 
-WRITE_HANDLER = DisableAbleCommandHandler("write", handwrite, run_async=True)
-dispatcher.add_handler(WRITE_HANDLER)
 
 __mod_name__ = "WʀɪᴛᴇTᴏᴏʟ"
 
-__command_list__ = ["write"]
-__handlers__ = [WRITE_HANDLER]
